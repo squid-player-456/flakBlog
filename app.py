@@ -1,8 +1,10 @@
 from flask import Flask
 from mod_admin import admin
 from flask_sqlalchemy import SQLAlchemy
+from config import Development
 
 app = Flask(__name__)
+app.config.from_object(Development)
 db = SQLAlchemy(app)
 
 
